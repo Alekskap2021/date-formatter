@@ -4,7 +4,8 @@
   "description": "A library that allows flexible display of dates",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "publish": "webpack && npm version patch && npm publish"
   },
   "repository": {
     "type": "git",
