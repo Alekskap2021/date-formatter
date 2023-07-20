@@ -2,7 +2,7 @@
   "name": "date-formatter",
   "version": "1.0.0",
   "description": "A library that allows flexible display of dates",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "test"
   },
