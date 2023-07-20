@@ -1,0 +1,26 @@
+{
+  "name": "date-formatter",
+  "version": "1.0.0",
+  "description": "A library that allows flexible display of dates",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alekskap2021/date-formatter.git"
+  },
+  "keywords": [
+    "date",
+    "formatter"
+  ],
+  "author": "aleks-kap1009",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alekskap2021/date-formatter/issues"
+  },
+  "homepage": "https://github.com/Alekskap2021/date-formatter#readme",
+  "devDependencies": {
+    "jest": "^29.6.1"
+  }
+}
