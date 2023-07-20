@@ -1,2 +1,2 @@
-import { dateFormatter } from './dateFormatter';
+import { dateFormatter } from './DateFormatter/dateFormatter';
 export { dateFormatter };

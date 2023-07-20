@@ -5,7 +5,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "test": "test",
-    "publish": "webpack && npm version patch && npm publish"
+    "publish": "webpack && git add . && git commit -am \"new version\" && npm version patch && npm publish && git push"
   },
   "repository": {
     "type": "git",
