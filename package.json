@@ -1,8 +1,8 @@
 {
-  "name": "date-formatter",
+  "name": "js-formatters",
   "version": "1.0.0",
   "description": "A library that allows flexible display of dates",
-  "main": "index.ts",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "test"
   },
@@ -21,6 +21,13 @@
   },
   "homepage": "https://github.com/Alekskap2021/date-formatter#readme",
   "devDependencies": {
-    "jest": "^29.6.1"
-  }
+    "jest": "^29.6.1",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "files": [
+    "dist"
+  ]
 }
