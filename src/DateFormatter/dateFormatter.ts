@@ -28,15 +28,3 @@ export const dateFormatter = (date: Date, options: FormatterOptions = defaultOpt
 
   return intlDate.format(date);
 };
-
-const date = new Date(Date.UTC(2020, 11, 20, 3, 23, 16, 738));
-
-console.log(
-  dateFormatter(date, {
-    locale: 'en-GB',
-    isDateShort: false,
-    weekDay: 'full',
-    withFullTime: true,
-    timeZone: 'GMT',
-  })
-);
