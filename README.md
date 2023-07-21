@@ -12,10 +12,15 @@ Formatting data is easy than you think
 
 ```javascript
 // es6
-import { dateFormatter, rangeFormatter } from 'js-formatters';
+import { dateFormatter, rangeFormatter, currencyFormatter, numberFormatter } from 'js-formatters';
 
 // es5
-const { dateFormatter, rangeFormatter } = require('js-formatters');
+const {
+  dateFormatter,
+  rangeFormatter,
+  currencyFormatter,
+  numberFormatter,
+} = require('js-formatters');
 ```
 
 # dateFormatter
@@ -327,7 +332,7 @@ console.log(currencyFormatter(10000000.8, 'GBP'));
 _default - undefined_\
 _type - string | string [ ] | undefined_;
 
-The locale parameter is responsible for the format in which the amount will be displayed
+The locale parameter is responsible for the format in which the amount will be displayed. If the locales argument is not provided or specified, the runtime's default locale is used.
 
 ```javascript
 console.log(currencyFormatter(10000, 'USD', { locale: 'ru-RU' }));
@@ -374,3 +379,78 @@ console.log(currencyFormatter(10000, 'USD', { fractionDigits: 2 }));
 console.log(currencyFormatter(10000, 'USD', { fractionDigits: 4 }));
 // Expected output: "$10,000.0000"
 ```
+
+# numberFormatter
+
+Args:
+
+```typescript
+num: number;
+
+options?: CurrencyFormatterOpt = {
+  locale?: string | string[];
+  style?: 'decimal' | 'percent';
+  minFractionDigits?: number;
+  maxFractionDigits?: number;
+}
+```
+
+The numberFormatter function allows you to quickly and conveniently convert a number to a more readable form.
+
+```javascript
+console.log(numberFormatter(1000000));
+// Expected output: "1 000 000"
+console.log(numberFormatter(102344670));
+// Expected output: "102 344 670"
+console.log(numberFormatter(10000));
+// Expected output: "10 000"
+```
+
+## numberFormatter options
+
+### locale
+
+_default - undefined_\
+_type - string | string [ ] | undefined_;
+
+This option is responsible for displaying the number in the given locale. If the locales argument is not provided or specified, the runtime's default locale is used.
+
+```javascript
+console.log(numberFormatter(1000000, { locale: 'en-US' }));
+// Expected output: "1,000,000"
+
+console.log(numberFormatter(1000000, { locale: 'ch-CH' }));
+// Expected output: "1 000 000"
+```
+
+### style
+
+_default - 'decimal'_\
+_type - 'decimal' | 'percent'_;
+
+This option determines in which format to work with a number - as a percentage or as a number
+
+```javascript
+console.log(numberFormatter(1000000, { style: 'decimal' }));
+// Expected output: "1 000 000"
+
+console.log(numberFormatter(0.5673, { style: 'percent' }));
+// Expected output: "57 %"
+```
+
+### minFractionDigits
+
+_default - 0_\
+_type - number | undefined_;
+
+The minFractionDigits parameter specifies how minimum decimal places to display. \
+**Must be in the range 0 <= minFractionDigits <=20**.\
+If the value is 0 - decimal places will be placed automatically if the number is not an integer
+
+### maxFractionDigits
+
+_default - undefined_\
+_type - number | undefined_;
+
+The maxFractionDigits parameter specifies how maximum decimal places to display. \
+**Must be in the range 0 <= maxFractionDigits <=20**.\
