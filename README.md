@@ -291,3 +291,86 @@ console.log(
 );
 // expected output: "в след. мес."
 ```
+
+# currencyFormatter
+
+Args:
+
+```typescript
+num: number;
+currencyCode: string;
+
+options?: CurrencyFormatterOpt = {
+  locale?: string | string[];
+  display?: 'symbol' | 'code' | 'name';
+  fractionDigits?: number;
+}
+```
+
+The currencyFormatter function allows you to convert any number to any currency automatically
+
+```javascript
+console.log(currencyFormatter(10000, 'USD'));
+// expected output: "10 000 USD"
+console.log(currencyFormatter(10000.55, 'RUB'));
+// expected output: "10 000,55 RUB"
+console.log(currencyFormatter(1000000.1235, 'KZT'));
+// expected output: "1 000 000,12 KZT"
+console.log(currencyFormatter(10000000.8, 'GBP'));
+// expected output: "10 000 000,8 GBP"
+```
+
+## currencyFormatter options
+
+### locale
+
+_default - undefined_\
+_type - string | string [ ] | undefined_;
+
+The locale parameter is responsible for the format in which the amount will be displayed
+
+```javascript
+console.log(currencyFormatter(10000, 'USD', { locale: 'ru-RU' }));
+// Expected output: "10 000 $"
+console.log(currencyFormatter(10000.55, 'RUB', { locale: 'en-US' }));
+// Expected output: "RUB 10,000.55"
+console.log(currencyFormatter(10000000.8, 'GBP', { locale: 'ch-CH' }));
+// Expected output: "10 000 000,8 £"
+```
+
+### display
+
+_default - "symbol"_\
+_type - ''symbol' | 'code' | 'name'_;
+
+The display parameter determines how to display the currency code
+
+```javascript
+console.log(currencyFormatter(10000, 'USD', { display: 'code' }));
+// Expected output: "USD 10,000"
+
+console.log(currencyFormatter(10000, 'USD', { display: 'name' }));
+// Expected output: "10,000 US dollars"
+
+console.log(currencyFormatter(10000, 'USD', { display: 'symbol' }));
+// Expected output: "$10,000"
+```
+
+### fractionDigits
+
+The fractionDigits parameter specifies how many decimal places to display. **Must be in the range 0 <= fractionDigits <=20**.\
+If the value is 0 - decimal places will be placed automatically if the number is not an integer
+
+_default - 0_\
+_type - number_;
+
+```javascript
+console.log(currencyFormatter(10000, 'USD', { fractionDigits: 0 }));
+// Expected output: "$10,000"
+
+console.log(currencyFormatter(10000, 'USD', { fractionDigits: 2 }));
+// Expected output: "$10,000.00"
+
+console.log(currencyFormatter(10000, 'USD', { fractionDigits: 4 }));
+// Expected output: "$10,000.0000"
+```
