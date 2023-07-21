@@ -33,17 +33,3 @@ export const rangeFormatter = (
   const intl = new Intl.RelativeTimeFormat(locale, intlOptions);
   return intl.format(Math.floor(deltaSeconds / divisor), units[unitIndex]);
 };
-
-console.log(rangeFormatter(new Date('2023-09-01T23:38:04')));
-
-console.log(rangeFormatter(new Date('2025-09-01T23:38:04')));
-
-console.log(rangeFormatter(new Date('2022-09-01T23:38:04')));
-
-console.log(rangeFormatter(new Date('2023-07-01T23:38:04')));
-
-console.log(rangeFormatter(new Date('2023-04-01T23:38:04')));
-
-console.log(rangeFormatter(new Date('2023-07-23T23:38:04')));
-
-console.log(rangeFormatter(new Date('2023-07-21T16:38:04')));
