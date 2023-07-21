@@ -1,6 +1,6 @@
 {
   "name": "js-formatters",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A library that allows flexible display of dates",
   "main": "./dist/index.js",
   "scripts": {
